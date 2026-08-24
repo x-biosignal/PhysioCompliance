@@ -4,7 +4,7 @@ Deterministic SHA-256 audit chains and externally authenticated
 electronic signatures, explicit de-identification policies, keyed
 pseudonymization, structured header scrubbing, and plan-first
 data-subject helpers for
-[PhysioCore::PhysioExperiment](https://x-biosignal.r-universe.dev/PhysioCore/reference/PhysioExperiment.html)
+[PhysioCore::PhysioExperiment](https://x-biosignal.github.io/PhysioCore//reference/PhysioExperiment.html)
 records. The package also supplies original lifecycle/risk templates,
 deterministic traceability graphs with objective-evidence hashing, and
 read-only package engineering-readiness checks.

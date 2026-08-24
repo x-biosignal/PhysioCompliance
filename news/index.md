@@ -1,5 +1,18 @@
 # Changelog
 
+## PhysioCompliance 0.4.0
+
+- [`deidentify()`](https://x-biosignal.github.io/PhysioCompliance/reference/deidentify.md)
+  now handles `PhysioCohort` (the multi-subject container): it
+  de-identifies each subject timeline and the subject-level `colData`
+  (where cohort PII concentrates), and stores the merged report in the
+  cohort `metadata` slot. The structural `subject_id` linkage key is
+  replaced with a stable positional pseudonym so the container stays
+  valid and internally consistent while the real identifier is removed.
+  Previously
+  [`deidentify()`](https://x-biosignal.github.io/PhysioCompliance/reference/deidentify.md)
+  aborted on a `PhysioCohort`.
+
 ## PhysioCompliance 0.3.0
 
 - Add deterministic lifecycle and risk-management template rendering

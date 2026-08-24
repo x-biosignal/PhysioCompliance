@@ -21,7 +21,7 @@ initializeAuditTrail(
 - x:
 
   A
-  [PhysioCore::PhysioExperiment](https://x-biosignal.r-universe.dev/PhysioCore/reference/PhysioExperiment.html)
+  [PhysioCore::PhysioExperiment](https://x-biosignal.github.io/PhysioCore//reference/PhysioExperiment.html)
   object.
 
 - actor:

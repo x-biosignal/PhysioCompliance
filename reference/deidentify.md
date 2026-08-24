@@ -23,8 +23,11 @@ deidentify(
 
 - x:
 
-  A `PhysioExperiment`, `MultiRatePhysioExperiment`, or
-  `PhysioLongitudinal`.
+  A `PhysioExperiment`, `MultiRatePhysioExperiment`,
+  `PhysioLongitudinal`, or `PhysioCohort` (a multi-subject container
+  whose subject-level `colData` and every subject timeline are
+  de-identified; unlike MultiRate/Longitudinal it has a `metadata` slot,
+  so its merged report is stored there).
 
 - policy:
 

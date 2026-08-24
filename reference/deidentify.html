@@ -13,7 +13,7 @@ never removed values, keys, or re-identification material."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioCompliance</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,8 +82,11 @@ never removed values, keys, or re-identification material.</p>
 
 
 <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
-<dd><p>A <code>PhysioExperiment</code>, <code>MultiRatePhysioExperiment</code>, or
-<code>PhysioLongitudinal</code>.</p></dd>
+<dd><p>A <code>PhysioExperiment</code>, <code>MultiRatePhysioExperiment</code>,
+<code>PhysioLongitudinal</code>, or <code>PhysioCohort</code> (a multi-subject container whose
+subject-level <code>colData</code> and every subject timeline are de-identified; unlike
+MultiRate/Longitudinal it has a <code>metadata</code> slot, so its merged report is
+stored there).</p></dd>
 
 
 <dt id="arg-policy">policy<a class="anchor" aria-label="anchor" href="#arg-policy"></a></dt>
