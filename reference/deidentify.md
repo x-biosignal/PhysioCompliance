@@ -68,5 +68,4 @@ A modified object of the same S4 class.
 `MultiRatePhysioExperiment` and `PhysioLongitudinal` do not provide a
 metadata slot. Their aggregate report is stored as a serializable
 `deidentification` attribute, while every child `PhysioExperiment` keeps
-its report in `metadata()`. Existing WS10-35 audit trails are linked per
-child.
+its report in `metadata()`. Existing audit trails are linked per child.
