@@ -1,0 +1,53 @@
+{
+  "schema_version": "1",
+  "template_set_id": "physio-lifecycle-v1",
+  "files": [
+    "project-record.json",
+    "software-development-plan.md",
+    "software-requirements.md",
+    "architecture-design.md",
+    "verification-validation-plan.md",
+    "configuration-change-management.md",
+    "maintenance-problem-resolution.md",
+    "release-record.md",
+    "risk-management-plan.md",
+    "hazard-analysis.csv",
+    "risk-controls.csv",
+    "test-evidence.csv",
+    "traceability-links.csv",
+    "production-post-production-review.md"
+  ],
+  "sha256": {
+    "project-record.json": "1e1c97c2b77a7f698d4e516525d00409359a624e890319c91305178b5b1397d6",
+    "software-development-plan.md": "e143b1fc0e12124c3ae041d7f9d760d40df10fbaef54b770f12fc5f4dbdba885",
+    "software-requirements.md": "766b27b1b0f516927add23ddef36096f98726659c94627b0cebe11de607b27c9",
+    "architecture-design.md": "70a44b0aad3c0b74e458be083c57815ca4a0518a63000af8078449b0a31cd0bb",
+    "verification-validation-plan.md": "e6c2f69e9b6001571db849ddf6a818d9c411dc22c3d94cdb67893a6f06d7ad67",
+    "configuration-change-management.md": "51d49e9dd1f74d8cd55e61e22ae69ec77dd081b4556cb17a89555224c076e517",
+    "maintenance-problem-resolution.md": "8b10211654994a80efbe22c19d6403e7929c2e7ab8f19e112ce5d56ccac9f9a0",
+    "release-record.md": "feab1bec1cbd05dab8cd21f2b9d13977e51e42775617a98a5cfbc95d350ce142",
+    "risk-management-plan.md": "52c7a7443ecef419ec77dae989c3a548d1c1aae80d361b54ce235acd6f9a216b",
+    "hazard-analysis.csv": "2345a60622bb02eca7c87374771cfaad67d9cccff3608ff2a482a053b3b847e0",
+    "risk-controls.csv": "9eff1e880454f7fd394e4538fdb32aebad11f71fd2398c653c8fcdc6bb1742db",
+    "test-evidence.csv": "bae987cb141e98c0892fa3668a7ac8377bdc96d7e7f9c4ad9f76ddb9f93a90da",
+    "traceability-links.csv": "d0f2ef71085845aea4e1c7967e74daf27d76318aa2768aa0a9c5f7128cf1e0a9",
+    "production-post-production-review.md": "524a6a3fb8212cd1ac3b30923e4ae31faaeb57106c97b4bbded9ef545e6dfe9e"
+  },
+  "placeholders": [
+    "PROJECT",
+    "INTENDED_USE",
+    "SOFTWARE_SAFETY_CLASS",
+    "OWNER",
+    "EFFECTIVE_DATE",
+    "SOURCE_EDITIONS"
+  ],
+  "source_ids": [
+    "IEC_62304_2006_A1_2015",
+    "ISO_14971_2019",
+    "ISO_TR_24971_2020",
+    "FDA_DEVICE_SOFTWARE_2023",
+    "FDA_SOFTWARE_VALIDATION_2002",
+    "FDA_CSA_2026",
+    "BIOCCHECK_RELEASE"
+  ]
+}

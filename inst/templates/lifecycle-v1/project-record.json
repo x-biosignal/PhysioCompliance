@@ -1,0 +1,13 @@
+{
+  "schema_version": "1",
+  "project": "{{PROJECT}}",
+  "intended_use": "{{INTENDED_USE}}",
+  "owner": "{{OWNER}}",
+  "effective_date": "{{EFFECTIVE_DATE}}",
+  "source_editions": "{{SOURCE_EDITIONS}}",
+  "classification_value": "{{SOFTWARE_SAFETY_CLASS}}",
+  "classification_supplied_by": "{{OWNER}}",
+  "classification_rationale": "",
+  "classification_review_status": "pending",
+  "workflow_status": "draft"
+}

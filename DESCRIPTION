@@ -1,0 +1,52 @@
+Package: PhysioCompliance
+Type: Package
+Title: Evidence, Privacy, and Lifecycle Controls for Physiological Records
+Version: 0.4.0
+Authors@R: person("Yusuke", "Matsui", email = "mail.to.matsui@gmail.com", role = c("aut", "cre"))
+Description: Provides deterministic, tamper-evident audit trails, externally
+    authenticated electronic signatures, explicit de-identification policies,
+    project-owned lifecycle and risk-document templates, normalized
+    requirement-risk-control-test traceability, objective-evidence
+    verification, and read-only ecosystem engineering-readiness checks for
+    PhysioExperiment records and packages. Reports expose structural, linkage,
+    record-state, signature, privacy, traceability, and package-readiness
+    findings without repairing stored evidence. These technical controls and
+    documentation aids do not determine device status, assign risk
+    acceptability, authorize release, or establish conformity with a
+    regulatory framework or standard.
+Depends:
+    R (>= 4.2.0)
+Imports:
+    digest,
+    jsonlite,
+    methods,
+    openssl,
+    PhysioCore,
+    S4Vectors,
+    SummarizedExperiment
+Suggests:
+    BiocCheck,
+    callr,
+    covr,
+    testthat (>= 3.0.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Maintainer: Yusuke Matsui <mail.to.matsui@gmail.com>
+URL: https://github.com/x-biosignal/PhysioCompliance, https://x-biosignal.r-universe.dev/PhysioCompliance, https://x-biosignal.github.io/PhysioCompliance/
+BugReports: https://github.com/x-biosignal/PhysioCompliance/issues
+Config/testthat/edition: 3
+Collate:
+    'audit-trail.R'
+    'e-signature.R'
+    'deidentify.R'
+    'pseudonymization.R'
+    'header-scrub.R'
+    'data-subject.R'
+    'templates.R'
+    'risk-matrix.R'
+    'risk-trace.R'
+    'conformance.R'
+    'conformance-write.R'
+    'package.R'
