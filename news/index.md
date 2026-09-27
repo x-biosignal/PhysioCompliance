@@ -1,5 +1,12 @@
 # Changelog
 
+## PhysioCompliance 0.4.1
+
+- De-identification and data-subject handling accept the canonical
+  `MultiPhysioExperiment`. They previously tested for
+  `MultiRatePhysioExperiment` only, which would have rejected a
+  container built by the current constructor.
+
 ## PhysioCompliance 0.4.0
 
 - [`deidentify()`](https://x-biosignal.github.io/PhysioCompliance/reference/deidentify.md)
