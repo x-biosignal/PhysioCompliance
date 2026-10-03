@@ -1,0 +1,72 @@
+[
+  {
+    "source_id": "BIOCCHECK_RELEASE",
+    "publisher": "Bioconductor",
+    "title": "BiocCheck: Bioconductor-specific package checks",
+    "edition": "Bioconductor 3.22; BiocCheck 1.46.3",
+    "status": "released",
+    "publication_date": "2025-10-29",
+    "checked_on": "2026-07-28",
+    "url": "https://bioconductor.org/packages/release/bioc/html/BiocCheck.html"
+  },
+  {
+    "source_id": "FDA_CSA_2026",
+    "publisher": "U.S. Food and Drug Administration",
+    "title": "Computer Software Assurance for Production and Quality Management System Software",
+    "edition": "Final guidance, February 2026",
+    "status": "final",
+    "publication_date": "2026-02-03",
+    "checked_on": "2026-07-28",
+    "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/computer-software-assurance-production-and-quality-management-system-software"
+  },
+  {
+    "source_id": "FDA_DEVICE_SOFTWARE_2023",
+    "publisher": "U.S. Food and Drug Administration",
+    "title": "Content of Premarket Submissions for Device Software Functions",
+    "edition": "Final guidance, June 2023",
+    "status": "final",
+    "publication_date": "2023-06-14",
+    "checked_on": "2026-07-28",
+    "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/content-premarket-submissions-device-software-functions"
+  },
+  {
+    "source_id": "FDA_SOFTWARE_VALIDATION_2002",
+    "publisher": "U.S. Food and Drug Administration",
+    "title": "General Principles of Software Validation",
+    "edition": "Final guidance, version 2.0",
+    "status": "final",
+    "publication_date": "2002-01-11",
+    "checked_on": "2026-07-28",
+    "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/general-principles-software-validation"
+  },
+  {
+    "source_id": "IEC_62304_2006_A1_2015",
+    "publisher": "International Electrotechnical Commission",
+    "title": "IEC 62304 Medical device software - Software life cycle processes",
+    "edition": "Consolidated edition 1.1; 2006 with amendment 1:2015",
+    "status": "published; stability date 2028",
+    "publication_date": "2015-06-26",
+    "checked_on": "2026-07-28",
+    "url": "https://webstore.iec.ch/en/publication/22794"
+  },
+  {
+    "source_id": "ISO_14971_2019",
+    "publisher": "International Organization for Standardization",
+    "title": "ISO 14971 Medical devices - Application of risk management to medical devices",
+    "edition": "Edition 3",
+    "status": "published; confirmed current in 2025",
+    "publication_date": "2019-12-10",
+    "checked_on": "2026-07-28",
+    "url": "https://www.iso.org/standard/72704.html"
+  },
+  {
+    "source_id": "ISO_TR_24971_2020",
+    "publisher": "International Organization for Standardization",
+    "title": "ISO/TR 24971 Medical devices - Guidance on the application of ISO 14971",
+    "edition": "Edition 2; informative technical report",
+    "status": "published; revision planned as of 2026-07-06",
+    "publication_date": "2020-06-16",
+    "checked_on": "2026-07-28",
+    "url": "https://www.iso.org/standard/74437.html"
+  }
+]
