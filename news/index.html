@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioCompliance</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +50,15 @@
       <small>Source: <a href="https://github.com/x-biosignal/PhysioCompliance/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.4.2" id="physiocompliance-042">PhysioCompliance 0.4.2<a class="anchor" aria-label="anchor" href="#physiocompliance-042"></a></h2>
+<div class="section level3">
+<h3 id="documentation-0-4-2">Documentation<a class="anchor" aria-label="anchor" href="#documentation-0-4-2"></a></h3>
+<ul><li>A vignette carries one task end to end on synthetic or bundled data, offline, and is built and run by <code>R CMD check</code>.</li>
+<li>Runnable <code>@examples</code> added or corrected across 20 help pages. Each runs offline in seconds, writes nothing outside <code><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir()</a></code>, and is executed by <code>R CMD check</code>; anything needing a device, a download or an optional backend is fenced with the reason stated.</li>
+<li>The README’s quick start runs as written: it attaches the package, builds its own inputs, and uses only hard dependencies.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.4.1" id="physiocompliance-041">PhysioCompliance 0.4.1<a class="anchor" aria-label="anchor" href="#physiocompliance-041"></a></h2>
 <ul><li>De-identification and data-subject handling accept the canonical <code>MultiPhysioExperiment</code>. They previously tested for <code>MultiRatePhysioExperiment</code> only, which would have rejected a container built by the current constructor.</li>

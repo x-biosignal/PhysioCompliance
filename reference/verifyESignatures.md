@@ -15,7 +15,7 @@ verifyESignatures(x, verify)
 - x:
 
   A
-  [PhysioCore::PhysioExperiment](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html)
+  [PhysioExperiment::PhysioExperiment](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html)
   object.
 
 - verify:
@@ -28,3 +28,27 @@ verifyESignatures(x, verify)
 
 A `compliance_verification` object containing audit and signature
 issues.
+
+## Examples
+
+``` r
+x <- PhysioExperiment::PhysioExperiment(
+  assays = list(raw = matrix(1:6, nrow = 3)),
+  samplingRate = 100
+)
+x <- initializeAuditTrail(x, actor = "operator-01")
+credential <- list(id = "credential-01", algorithm = "demo-sha256",
+                   fingerprint = "01:23:45:67")
+bytes <- function(challenge, credential) {
+  digest::digest(c(challenge, serialize(credential, NULL, version = 3)),
+                 algo = "sha256", serialize = FALSE, raw = TRUE)
+}
+x <- eSign(x, signer = "reviewer-02", meaning = "reviewed",
+           credential = credential, sign = bytes)
+# The verifier recomputes the same bytes; a real one checks a cryptographic
+# signature against the signer's credential.
+verifyESignatures(x, verify = function(challenge, signature, credential) {
+  identical(signature, bytes(challenge, credential))
+})$valid
+#> [1] TRUE
+```

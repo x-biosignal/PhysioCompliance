@@ -21,7 +21,7 @@ initializeAuditTrail(
 - x:
 
   A
-  [PhysioCore::PhysioExperiment](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html)
+  [PhysioExperiment::PhysioExperiment](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html)
   object.
 
 - actor:
@@ -43,7 +43,7 @@ A modified copy of `x` with a genesis audit event.
 ## Examples
 
 ``` r
-x <- PhysioCore::PhysioExperiment(
+x <- PhysioExperiment::PhysioExperiment(
   assays = list(raw = matrix(1:6, nrow = 3)),
   samplingRate = 100
 )

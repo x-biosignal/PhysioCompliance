@@ -55,3 +55,27 @@ lifecycleTemplate(
 ## Value
 
 A `lifecycle_template` manifest.
+
+## Examples
+
+``` r
+parent <- file.path(tempdir(), "pc-lifecycle-demo")
+dir.create(parent, showWarnings = FALSE)
+tmpl <- lifecycleTemplate(
+  out_dir = file.path(parent, "lifecycle"),
+  project = "Example Project",
+  intended_use = "Research data processing",
+  owner = "project-owner",
+  effective_date = as.Date("2026-07-28")
+)
+tmpl
+#> <lifecycle_template>
+#>   template set: physio-lifecycle-v1 
+#>   template type: lifecycle 
+#>   project: Example Project 
+#>   recorded class: unclassified 
+#>   classification review: pending 
+#>   files: 14 
+#>   content hash: 248ce0214b11c6c0e604d83227a118c8718bb8d9176b450a04b011117ffb995f 
+unlink(parent, recursive = TRUE)
+```

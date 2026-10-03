@@ -15,7 +15,7 @@ operational deletion remain controller responsibilities."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioCompliance</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,6 +119,28 @@ identifier.</p></dd>
     <p>A <code>data_subject_erasure</code> plan or applied result.</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">records</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  visit_01 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>subject <span class="op">=</span> <span class="st">"S1"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  visit_02 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>subject <span class="op">=</span> <span class="st">"S2"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># Plan mode builds a no-content plan and performs no deletion; apply mode</span></span></span>
+<span class="r-in"><span><span class="co"># changes only the returned in-memory collection, never files or backups.</span></span></span>
+<span class="r-in"><span><span class="va">plan</span> <span class="op">&lt;-</span> <span class="fu">dataSubjectErase</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">records</span>, <span class="st">"S1"</span>,</span></span>
+<span class="r-in"><span>  locate <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">record</span><span class="op">)</span> <span class="va">record</span><span class="op">$</span><span class="va">subject</span>,</span></span>
+<span class="r-in"><span>  authorize <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">plan</span><span class="op">)</span> <span class="cn">TRUE</span>,</span></span>
+<span class="r-in"><span>  reason <span class="op">=</span> <span class="st">"verified erasure request"</span>,</span></span>
+<span class="r-in"><span>  mode <span class="op">=</span> <span class="st">"plan"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">plan</span><span class="op">$</span><span class="va">plan</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   record_name                                               pre_erasure_digest</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    visit_01 1b265e4ca54c5e2d876c58f00f899b02406a0ba914dd69657168eab74f6a0669</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   decision retention_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    erase             &lt;NA&gt;</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

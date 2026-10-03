@@ -41,3 +41,14 @@ dateShift(
 ## Value
 
 A vector with the same length and date class.
+
+## Examples
+
+``` r
+key <- openssl::rand_bytes(32)
+visits <- as.Date(c("2026-01-05", "2026-02-02", "2026-03-09"))
+# One deterministic per-subject offset; exact intervals are preserved.
+shifted <- dateShift(visits, subject_id = "subject-a", key = key)
+all(diff(shifted) == diff(visits))
+#> [1] TRUE
+```

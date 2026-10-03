@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioCompliance</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@
 
 
 <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
-<dd><p>A <a href="https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html" class="external-link">PhysioCore::PhysioExperiment</a> object.</p></dd>
+<dd><p>A <a href="https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html" class="external-link">PhysioExperiment::PhysioExperiment</a> object.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -74,6 +74,29 @@
 uninitialized object returns a zero-row trail.</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">PhysioExperiment</span><span class="fu">::</span><span class="fu"><a href="https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html" class="external-link">PhysioExperiment</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  assays <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>raw <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>, nrow <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  samplingRate <span class="op">=</span> <span class="fl">100</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="initializeAuditTrail.html">initializeAuditTrail</a></span><span class="op">(</span><span class="va">x</span>, actor <span class="op">=</span> <span class="st">"operator-01"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">auditTrail</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;audit_trail&gt; 1 event</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  sequence                   timestamp       actor                 action</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         1 2026-10-03T13:15:14.042502Z operator-01 initialize_audit_trail</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                   reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  audit trail initialized</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                       record_hash</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2426dc5f51bb6e484e0cd143aec1431ecc216cb7465d975cbb4f85c6462a1333</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                     previous_hash</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  0000000000000000000000000000000000000000000000000000000000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                        entry_hash</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  490c19dd3f091069cfea9cb4d651132f2e1aa6c5435868b000f24215089c8769</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  hash_algorithm serialization_version  details</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          sha256                     3 &lt;list:2&gt;</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -22,7 +22,7 @@ appendAuditEvent(
 - x:
 
   An initialized
-  [PhysioCore::PhysioExperiment](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html)
+  [PhysioExperiment::PhysioExperiment](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html)
   object.
 
 - action:
@@ -50,3 +50,21 @@ appendAuditEvent(
 ## Value
 
 A modified copy of `x` with one additional event.
+
+## Examples
+
+``` r
+x <- PhysioExperiment::PhysioExperiment(
+  assays = list(raw = matrix(1:6, nrow = 3)),
+  samplingRate = 100
+)
+x <- initializeAuditTrail(x, actor = "operator-01")
+x <- appendAuditEvent(
+  x,
+  action = "quality_control",
+  actor = "operator-01",
+  reason = "reviewed acquisition quality"
+)
+verifyAuditTrail(x)
+#> <compliance_verification> valid; 2 events; 0 signatures
+```

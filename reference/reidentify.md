@@ -21,3 +21,13 @@ reidentify(x, key)
 ## Value
 
 Character vector aligned to `x$values`.
+
+## Examples
+
+``` r
+key <- openssl::rand_bytes(32)
+p <- pseudonymize(c("subject-a", "subject-b"), key,
+                  namespace = "study-example")
+reidentify(p, key)
+#> [1] "subject-a" "subject-b"
+```

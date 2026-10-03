@@ -29,3 +29,15 @@ dataSubjectExport(records, subject_id, locate)
 ## Value
 
 A `data_subject_export` object.
+
+## Examples
+
+``` r
+records <- list(
+  visit_01 = list(subject = "S1", note = "baseline"),
+  visit_02 = list(subject = "S2", note = "baseline")
+)
+# `locate` is a caller-owned identity matcher called once per record.
+dataSubjectExport(records, "S1", locate = function(record) record$subject)
+#> <data_subject_export> records=1; manifest=1
+```

@@ -11,7 +11,7 @@ infer a risk-acceptability policy."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioCompliance</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,6 +93,41 @@ rationale.</p></dd>
     <p>A deterministic <code>risk_matrix</code> object.</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">severity</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  level_id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"S1"</span>, <span class="st">"S2"</span><span class="op">)</span>, rank <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>,</span></span>
+<span class="r-in"><span>  label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Minor"</span>, <span class="st">"Serious"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  definition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Limited impact"</span>, <span class="st">"Significant impact"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">probability</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  level_id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"P1"</span>, <span class="st">"P2"</span><span class="op">)</span>, rank <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>,</span></span>
+<span class="r-in"><span>  label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Unlikely"</span>, <span class="st">"Likely"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  definition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Rarely occurs"</span>, <span class="st">"Often occurs"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">decisions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html" class="external-link">expand.grid</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  severity_id <span class="op">=</span> <span class="va">severity</span><span class="op">$</span><span class="va">level_id</span>, probability_id <span class="op">=</span> <span class="va">probability</span><span class="op">$</span><span class="va">level_id</span>,</span></span>
+<span class="r-in"><span>  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># One explicit project decision for every pair; ranks are never multiplied</span></span></span>
+<span class="r-in"><span><span class="co"># and no universal acceptability threshold is supplied.</span></span></span>
+<span class="r-in"><span><span class="va">decisions</span><span class="op">$</span><span class="va">decision</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"acceptable"</span>, <span class="st">"review_required"</span>,</span></span>
+<span class="r-in"><span>                        <span class="st">"review_required"</span>, <span class="st">"unacceptable"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">decisions</span><span class="op">$</span><span class="va">rationale</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"POLICY-"</span>, <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_len</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">decisions</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">riskMatrix</span><span class="op">(</span><span class="va">severity</span>, <span class="va">probability</span>, <span class="va">decisions</span>,</span></span>
+<span class="r-in"><span>           matrix_id <span class="op">=</span> <span class="st">"RM01"</span>, version <span class="op">=</span> <span class="st">"1.0"</span>,</span></span>
+<span class="r-in"><span>           rationale <span class="op">=</span> <span class="st">"Project-owned decision policy"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;risk_matrix&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   matrix: RM01 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   version: 1.0 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   severity levels: 2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   probability levels: 2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   explicit decisions: 4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   matrix hash: 6df531d07ce4581081cc782ae59a46e4243eefb0c4759731671998b852fa8220 </span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

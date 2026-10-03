@@ -49,3 +49,22 @@ headerScrub(
 ## Value
 
 A `header_scrub` object containing the scrubbed header and reports.
+
+## Examples
+
+``` r
+header <- list(
+  patient_id = "source-patient",
+  recording_id = "source-recording",
+  start_date = as.Date("2024-02-29"),
+  comments = "free text note",
+  signal_headers = list(label = c("ECG", "EMG"), unit = c("mV", "mV"))
+)
+# Scrubs a parsed header only; it does not read or rewrite the binary file.
+result <- headerScrub(header, "edf", subject_token = "psn_safe",
+                      free_text = "drop")
+result$header$patient_id
+#> [1] "psn_safe"
+result
+#> <header_scrub> format=edf; actions=4; manual-review=2
+```

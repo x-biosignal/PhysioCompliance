@@ -56,3 +56,26 @@ dataSubjectErase(
 ## Value
 
 A `data_subject_erasure` plan or applied result.
+
+## Examples
+
+``` r
+records <- list(
+  visit_01 = list(subject = "S1"),
+  visit_02 = list(subject = "S2")
+)
+# Plan mode builds a no-content plan and performs no deletion; apply mode
+# changes only the returned in-memory collection, never files or backups.
+plan <- dataSubjectErase(
+  records, "S1",
+  locate = function(record) record$subject,
+  authorize = function(plan) TRUE,
+  reason = "verified erasure request",
+  mode = "plan"
+)
+plan$plan
+#>   record_name                                               pre_erasure_digest
+#> 1    visit_01 1b265e4ca54c5e2d876c58f00f899b02406a0ba914dd69657168eab74f6a0669
+#>   decision retention_reason
+#> 1    erase             <NA>
+```

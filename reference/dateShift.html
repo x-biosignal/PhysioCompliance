@@ -11,7 +11,7 @@ pseudonymized personal data, not a HIPAA Safe Harbor output."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioCompliance</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,6 +101,16 @@ pseudonymized personal data, not a HIPAA Safe Harbor output.</p>
     <p>A vector with the same length and date class.</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">key</span> <span class="op">&lt;-</span> <span class="fu">openssl</span><span class="fu">::</span><span class="fu"><a href="https://jeroen.r-universe.dev/openssl/reference/rand_bytes.html" class="external-link">rand_bytes</a></span><span class="op">(</span><span class="fl">32</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">visits</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2026-01-05"</span>, <span class="st">"2026-02-02"</span>, <span class="st">"2026-03-09"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># One deterministic per-subject offset; exact intervals are preserved.</span></span></span>
+<span class="r-in"><span><span class="va">shifted</span> <span class="op">&lt;-</span> <span class="fu">dateShift</span><span class="op">(</span><span class="va">visits</span>, subject_id <span class="op">=</span> <span class="st">"subject-a"</span>, key <span class="op">=</span> <span class="va">key</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/all.html" class="external-link">all</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html" class="external-link">diff</a></span><span class="op">(</span><span class="va">shifted</span><span class="op">)</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html" class="external-link">diff</a></span><span class="op">(</span><span class="va">visits</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

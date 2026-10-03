@@ -23,11 +23,11 @@ deidentify(
 
 - x:
 
-  A `PhysioExperiment`, `MultiRatePhysioExperiment`,
-  `PhysioLongitudinal`, or `PhysioCohort` (a multi-subject container
-  whose subject-level `colData` and every subject timeline are
-  de-identified; unlike MultiRate/Longitudinal it has a `metadata` slot,
-  so its merged report is stored there).
+  A `PhysioExperiment`, `MultiPhysioExperiment`, `PhysioLongitudinal`,
+  or `PhysioCohort` (a multi-subject container whose subject-level
+  `colData` and every subject timeline are de-identified; unlike
+  MultiRate/Longitudinal it has a `metadata` slot, so its merged report
+  is stored there).
 
 - policy:
 
@@ -65,7 +65,21 @@ A modified object of the same S4 class.
 
 ## Details
 
-`MultiRatePhysioExperiment` and `PhysioLongitudinal` do not provide a
+`MultiPhysioExperiment` and `PhysioLongitudinal` do not provide a
 metadata slot. Their aggregate report is stored as a serializable
 `deidentification` attribute, while every child `PhysioExperiment` keeps
 its report in `metadata()`. Existing audit trails are linked per child.
+
+## Examples
+
+``` r
+x <- PhysioExperiment::PhysioExperiment(
+  assays = list(raw = matrix(1:6, nrow = 3)),
+  colData = S4Vectors::DataFrame(patient_name = c("A", "B")),
+  samplingRate = 100
+)
+# Changes only the returned in-memory object; stored evidence is not repaired.
+clean <- deidentify(x, safeHarborPolicy())
+auditDeidentification(clean)$status
+#> [1] "manual_review"
+```

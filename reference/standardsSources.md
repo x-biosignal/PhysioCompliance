@@ -24,3 +24,15 @@ standardsSources(max_age_days = 365L, as_of = Sys.Date())
 ## Value
 
 A `standards_sources` data frame.
+
+## Examples
+
+``` r
+# Reads edition metadata recorded at build time; performs no network request.
+sources <- standardsSources(as_of = as.Date("2026-07-28"))
+sources[, c("source_id", "edition", "review_status")]
+#> <standards_sources>
+#>   sources: 7 
+#>   current: 7 
+#>   review due: 0 
+```

@@ -45,3 +45,29 @@ pseudonymizedPolicy(
 ## Value
 
 A `deidentification_policy` data frame.
+
+## Examples
+
+``` r
+# A conservative field policy. The `safe_harbor_candidate` label is a
+# configured-field result, not a legal de-identification determination.
+policy <- safeHarborPolicy(free_text = "drop", biometric_data = "drop")
+head(policy[, c("category", "action")])
+#>             category action
+#> 1              names remove
+#> 2 substate_geography remove
+#> 3         dates_ages   year
+#> 4          telephone remove
+#> 5                fax remove
+#> 6              email remove
+
+# The pseudonymized variant shifts dates instead of reducing them to a year.
+head(pseudonymizedPolicy(free_text = "drop")[, c("category", "action")])
+#>             category       action
+#> 1              names pseudonymize
+#> 2 substate_geography pseudonymize
+#> 3         dates_ages   date_shift
+#> 4          telephone pseudonymize
+#> 5                fax pseudonymize
+#> 6              email pseudonymize
+```

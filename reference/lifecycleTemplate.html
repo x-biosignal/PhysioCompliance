@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioCompliance</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -110,6 +110,29 @@
     <p>A <code>lifecycle_template</code> manifest.</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">parent</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"pc-lifecycle-demo"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span><span class="va">parent</span>, showWarnings <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">tmpl</span> <span class="op">&lt;-</span> <span class="fu">lifecycleTemplate</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  out_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">parent</span>, <span class="st">"lifecycle"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  project <span class="op">=</span> <span class="st">"Example Project"</span>,</span></span>
+<span class="r-in"><span>  intended_use <span class="op">=</span> <span class="st">"Research data processing"</span>,</span></span>
+<span class="r-in"><span>  owner <span class="op">=</span> <span class="st">"project-owner"</span>,</span></span>
+<span class="r-in"><span>  effective_date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2026-07-28"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">tmpl</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;lifecycle_template&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   template set: physio-lifecycle-v1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   template type: lifecycle </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   project: Example Project </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   recorded class: unclassified </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   classification review: pending </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   files: 14 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   content hash: 248ce0214b11c6c0e604d83227a118c8718bb8d9176b450a04b011117ffb995f </span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/unlink.html" class="external-link">unlink</a></span><span class="op">(</span><span class="va">parent</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

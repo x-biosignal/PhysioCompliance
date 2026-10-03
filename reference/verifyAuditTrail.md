@@ -14,7 +14,7 @@ verifyAuditTrail(x)
 - x:
 
   A
-  [PhysioCore::PhysioExperiment](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html)
+  [PhysioExperiment::PhysioExperiment](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html)
   object.
 
 ## Value
@@ -29,3 +29,15 @@ earlier copy from the record as it existed at that time. Detect
 whole-object rollback or removal of the current tail event by retaining
 each verified `head_hash` in a validated external append-only store and
 comparing it on retrieval.
+
+## Examples
+
+``` r
+x <- PhysioExperiment::PhysioExperiment(
+  assays = list(raw = matrix(1:6, nrow = 3)),
+  samplingRate = 100
+)
+x <- initializeAuditTrail(x, actor = "operator-01")
+verifyAuditTrail(x)
+#> <compliance_verification> valid; 1 event; 0 signatures
+```

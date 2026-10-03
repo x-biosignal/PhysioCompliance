@@ -56,7 +56,7 @@ install.packages(
 
 ``` r
 
-library(PhysioCore)
+library(PhysioExperiment)
 library(PhysioCompliance)
 
 x <- PhysioExperiment(
@@ -93,7 +93,9 @@ policy <- safeHarborPolicy(
   free_text = "drop",
   biometric_data = "drop"
 )
-deidentified <- deidentify(x, policy)
+# `x` already carries an audit trail, so de-identification must name the actor
+# it records the de-identification event under.
+deidentified <- deidentify(x, policy, audit_actor = "operator-01")
 auditDeidentification(deidentified, policy)
 ```
 

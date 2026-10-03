@@ -21,7 +21,8 @@ traceabilityMatrix(
 - requirements, risks, controls, tests, links:
 
   Plain data frames using the schemas documented in
-  `vignette("PhysioCompliance")` and the package reference.
+  [`vignette("PhysioCompliance")`](https://x-biosignal.github.io/PhysioCompliance/articles/PhysioCompliance.md)
+  and the package reference.
 
 - evidence_root:
 
